@@ -15,7 +15,7 @@ export default class AppProvider extends Component{
       this.setState({rehydrated:true})
     })
   }
-  render()
+  render(){
     return(
       <Provider store={Store}>
         <App/>

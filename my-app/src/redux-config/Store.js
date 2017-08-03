@@ -4,7 +4,9 @@ import logger from 'redux-logger'
 import {autoRehydrate} from 'redux-persist'
 import reducers from '../reducers'
 
-export default const Store = compose(
+const Store = compose(
   applyMiddleware(promise, logger),
   autoRehydrate()
 )(createStore)(reducers)
+
+export default Store

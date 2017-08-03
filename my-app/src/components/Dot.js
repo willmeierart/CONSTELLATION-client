@@ -14,9 +14,13 @@ export default class Dot extends Component {
   render() {
     return (
       <div
-        onDragEnter={(e)=>{this.changeColor(e)}}
+        // onDragEnter={(e)=>{this.changeColor(e)}}
+        onMouseOver={(e)=>{this.changeColor(e)}}
+
+        onClick={(e)=>{this.changeColor(e)}}
         style={this.state.currentColor}
         className="circle circle-shadow">
+        <div></div>
       </div>
     )
   }

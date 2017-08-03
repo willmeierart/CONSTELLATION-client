@@ -12,9 +12,9 @@ export default function dummyColorArray(){
     for (let i = 0; i < 2084; i++){
       initialState.push(makeEachDot())
     }
-    return initialState()
+    return initialState
   }
-  makeDummyArray()
+  return makeDummyArray()
 }
 
 

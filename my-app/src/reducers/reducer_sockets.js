@@ -1,5 +1,4 @@
-import {IMPORT_SOCKETS_UPDATE} from './actions'
-import {EXPORT_SOCKETS_UPDATE} from './actions'
+import {IMPORT_SOCKETS_UPDATE, EXPORT_SOCKETS_UPDATE} from '../actions'
 
 import dummyColorArray from './dummy_array_generator'
 
@@ -11,5 +10,7 @@ export default function socketsReducer(state=dummyColorArray(), action){
     case EXPORT_SOCKETS_UPDATE:{
       let newState = [...action.payload]
       return newState || dummyColorArray()}
+    default:
+      return state
   }
 }

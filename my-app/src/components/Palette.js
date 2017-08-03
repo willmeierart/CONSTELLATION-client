@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SwatchDot from './SwatchDot'
+import SwatchDot from './Swatchdot'  
 import _ from 'lodash'
 
 export default class Palette extends Component {

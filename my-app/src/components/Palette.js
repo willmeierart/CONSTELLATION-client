@@ -9,7 +9,6 @@ export default class Palette extends Component {
   }
   renderSwatches(){
     return _.map(this.props.palette, palette=>{
-      console.log(palette)
       return (
         <SwatchDot
           activeColor={this.props.activeColor}

@@ -5,11 +5,11 @@ import dummyColorArray from './dummy_array_generator'
 
 export default function socketsReducer(state=dummyColorArray(), action){
   switch(action.type){
-    case IMPORT_SOCKETS_UPDATE:
+    case IMPORT_SOCKETS_UPDATE:{
       let newState = [...action.payload]
-      return newState || dummyColorArray()
-    case EXPORT_SOCKETS_UPDATE:
+      return newState || dummyColorArray()}
+    case EXPORT_SOCKETS_UPDATE:{
       let newState = [...action.payload]
-      return newState || dummyColorArray()
+      return newState || dummyColorArray()}
   }
 }

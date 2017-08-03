@@ -1,4 +1,4 @@
-export default const dummyColorArray=()=>{
+export default function dummyColorArray(){
   const makeEachDot=()=>{
     const dot = []
     for (let i = 0; i < 3; i++){
@@ -26,7 +26,7 @@ export default const dummyColorArray=()=>{
 //   />
 // })
 //
-// 
+//
 // ...then
 //
 // ...render(){

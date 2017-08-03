@@ -5,7 +5,7 @@ export const SET_ACTIVE_COLOR = 'set_active_color'
 
 
 export function importSocketsUpdate(){
-  const getRequest
+  const getRequest = null
   return {
     type:IMPORT_SOCKETS_UPDATE,
     payload: getRequest.data
@@ -13,7 +13,7 @@ export function importSocketsUpdate(){
 }
 
 export function exportSocketsUpdate(){
-  const postRequest
+  const postRequest = null
   return {
     type:EXPORT_SOCKETS_UPDATE,
     payload: postRequest
@@ -27,7 +27,7 @@ export function updatePixelValue(index, newRGB){
   }
 }
 
-export const setActiveColor(color){
+export function setActiveColor(color){
   return {
     type:SET_ACTIVE_COLOR,
     payload: color

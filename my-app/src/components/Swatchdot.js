@@ -9,7 +9,7 @@ export default class SwatchDot extends Component {
   clickHandler(e){
     const selectedColor = e.target.style.backgroundColor
     console.log(selectedColor)
-    this.props.setColor(selectedColor)
+    this.props.setColor(selectedColor) 
   }
 
   render() {

@@ -3,6 +3,10 @@
     src: url(./fonts/dot_matrix/DOTMATRI.TTF);
 }
 
+body {
+  background-color: #F1F1F1;
+}
+
 .brand {
   font-family: 'dot_matrix';
   color: #606060;
@@ -10,10 +14,11 @@
 
 .circle {
   width: 1.56%;
-  height: 2.3%;
+  /*height: 2.3%;*/
   border-radius: 50%;
   border: 1px solid #979797;
-  background-color: white;
+  /*background-color: white;*/
+  padding-bottom: -20px;
 
 }
 
@@ -23,7 +28,7 @@
   flex-direction: row;
   width: 80vw;
   margin-left: 10%;
-  height: 100vh;
+  height: 40vw;
 }
 
 .palette-container {

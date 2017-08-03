@@ -1,0 +1,51 @@
+@font-face {
+    font-family: dot_matrix;
+    src: url(./fonts/dot_matrix/DOTMATRI.TTF);
+}
+
+.brand {
+  font-family: 'dot_matrix';
+  color: #606060;
+}
+
+.circle {
+  width: 1.56%;
+  height: 2.3%;
+  border-radius: 50%;
+  border: 1px solid #979797;
+  background-color: white;
+
+}
+
+.matrix-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 80vw;
+  margin-left: 10%;
+  height: 100vh;
+}
+
+.palette-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.shadow {
+    box-shadow: 0px 0px 20px #000000;
+    z-index: 2;
+}
+
+.circle-shadow {
+    box-shadow: 0px 0px 1px #5A5A5A;
+    z-index: 2;
+}
+
+.grey {
+  background-color: #F1F1F1;
+}
+
+.white {
+  background-color: white;
+}

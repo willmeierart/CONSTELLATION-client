@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import Palette from './Palette'
 
 class Header extends Component {
   render(){
     return (
-      <nav className="navbar navbar-default">
-        <div className="container-fluid">
+      <nav className="navbar navbar-default shadow white">
+        <div className="container">
           <div className="navbar-header">
-            <a className="navbar-brand" href="#">Constellation</a>
+            <h1 className="brand">CONSTELLATION</h1>
           </div>
+            <div className="navbar-right"></div>
         </div>
       </nav>
     )

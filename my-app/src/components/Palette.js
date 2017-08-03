@@ -1,37 +1,30 @@
-import React, { Component } from 'react';
-import Swatchdot from './Swatchdot'
+import React, { Component } from 'react'
+import SwatchDot from './SwatchDot'
+import _ from 'lodash'
 
-class Palette extends Component {
+export default class Palette extends Component {
+  constructor(props){
+    super(props)
+    this.renderSwatches = this.renderSwatches.bind(this)
+  }
+  renderSwatches(){
+    return _.map(this.props.palette, palette=>{
+      console.log(palette)
+      return (
+        <SwatchDot
+          activeColor={this.props.activeColor}
+          setColor={this.props.setColor}
+          color={palette}
+          key={palette}/>
+      )
+    })
+  }
+
   render() {
-    const dummyArray = () => {
-      const array = [];
-      const paletteColors = [
-        "rgb(199,11,255)",
-        "rgb(144,7,164)",
-        "rgb(11,132,203)",
-        "rgb(26,216,9)",
-        "rgb(248,243,41)",
-        "rgb(247,163,20)",
-        "rgb(250,48,32)",
-        "rgb(218,42,100)",
-        "rgb(246,65,156)",
-        "rgb(255,255,255)",
-        "rgb(0,0,0)"
-      ]
-      for (let i=0; i < 11; i++){
-        array.push(<Swatchdot color={paletteColors[i]} key={i}/>);
-      }
-      return array
-    }
-
-
-
     return (
       <div className="palette-container">
-          {dummyArray()}
+          {this.renderSwatches()}
       </div>
-    );
+    )
   }
 }
-
-export default Palette;

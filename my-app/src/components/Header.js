@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Palette from './Palette'
 
-class Header extends Component {
+export default class Header extends Component {
   render(){
     return (
       <nav className="navbar navbar-default shadow white">
@@ -9,11 +9,14 @@ class Header extends Component {
           <div className="navbar-header">
             <h1 className="brand">CONSTELLATION</h1>
           </div>
-            <div className="navbar-right"><Palette /></div>
+            <div className="navbar-right">
+              <Palette
+                palette={this.props.palette}
+                activeColor={this.props.activeColor}
+                setColor={this.props.setColor} />
+            </div>
         </div>
       </nav>
     )
   }
 }
-
-export default Header;

@@ -26,6 +26,9 @@ body {
   border: 1px solid #979797;
   cursor: pointer;
   margin-right: 5px;
+  display:flex;
+  flex-direction: row;
+  align-self: middle;
 }
 
 .matrix-container {
@@ -44,6 +47,10 @@ body {
   flex-shrink: 0;
   padding-top: 25px;
   padding-right: 10px;
+  vertical-align: middle;
+  align-content:middle;
+  align-items: middle;
+
 }
 
 .shadow {

@@ -9,7 +9,7 @@ class Header extends Component {
           <div className="navbar-header">
             <h1 className="brand">CONSTELLATION</h1>
           </div>
-            <div className="navbar-right"></div>
+            <div className="navbar-right"><Palette /></div>
         </div>
       </nav>
     )

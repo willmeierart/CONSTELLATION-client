@@ -9,7 +9,7 @@ export default function dummyColorArray(){
   }
   const makeDummyArray=()=>{
     const initialState = []
-    for (let i = 0; i < 2084; i++){
+    for (let i = 0; i < 2048; i++){
       initialState.push(makeEachDot())
     }
     return initialState

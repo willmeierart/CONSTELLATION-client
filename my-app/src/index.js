@@ -1,6 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './componenets/App';
-import styles from './dot.css'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import AppProvider from './redux-config/AppProvider'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render( <AppProvider/> , document.getElementById('root'))

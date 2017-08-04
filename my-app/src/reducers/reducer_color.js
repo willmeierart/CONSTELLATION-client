@@ -1,7 +1,7 @@
 import {UPDATE_PIXEL_VALUE, SET_ACTIVE_COLOR, FETCH_PALETTE} from '../actions'
 const initialState = {
   palette:{},
-  activeColor:{}
+  activeColor:'rgb(255,255,255)'
 }
 
 export default function colorReducer(state=initialState, action){

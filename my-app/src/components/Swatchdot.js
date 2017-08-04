@@ -6,7 +6,7 @@ export default class SwatchDot extends Component {
     this.clickHandler = this.clickHandler.bind(this)
   }
 
-  clickHandler(e){  
+  clickHandler(e){
     const selectedColor = e.target.style.backgroundColor
     this.props.setColor(selectedColor)
   }
@@ -14,7 +14,6 @@ export default class SwatchDot extends Component {
   render() {
     const formattedColor = this.props.color.split(',').join(', ')
     const selectedDot = this.props.activeColor==formattedColor ? {selectedWidth: "26px", selectedHeight: "26px", deepShadow:"0px 0px 3px #2d2d2d"} : {selectedWidth: "20px", selectedHeight: "20px"}
-    console.log(formattedColor);
     return (
       <div className="swatch-circle-container">
         <div

@@ -2,10 +2,23 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Header from '../components/Header'
 import Matrix from '../components/Matrix'
-import {setActiveColor, fetchPalette} from '../actions'
+import {setActiveColor, fetchPalette, importSocketsUpdate, exportSocketsUpdate} from '../actions'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.updateState = this.updateState.bind(this)
+  }
   componentWillMount(){this.props.onFetchPalette()}
+
+  updateState(i, update){
+    const {data} = this.props.data.socketsData.matrixState
+    const updatedArr = data.slice()
+    updatedArr[i] = {backgroundColor: update.replace(/\s+/g,'')}
+    // const updatedArr = Object.assign([], data, {i:update})
+    this.props.onImportSocketsUpdate(updatedArr)
+    console.log('hello',update);
+  }
 
   render() {
     const {colorData} = this.props.data
@@ -17,8 +30,12 @@ class App extends Component {
             setColor={this.props.onSetActiveColor}
             activeColor={colorData.activeColor}/>
           <Matrix
-            dummyArray={this.props.data.socketsData}
-            activeColor={colorData.activeColor} />
+            dummyArray={this.props.data.socketsData.dummyArray}
+            realArray={this.props.data.socketsData.matrixState.data}
+            activeColor={colorData.activeColor}
+            importSocketsUpdate={this.props.onImportSocketsUpdate}
+            exportSocketsUpdate={this.props.onExportSocketsUpdate}
+            updateState={this.updateState}/>
         </div>
       </div>
     )
@@ -30,7 +47,9 @@ const mapStateToProps=(state)=>{ return {data:state} }
 const mapDispatchToProps=(dispatch)=>{
   return{
     onSetActiveColor:(color)=>{dispatch(setActiveColor(color))},
-    onFetchPalette:()=>{dispatch(fetchPalette())}
+    onFetchPalette:()=>{dispatch(fetchPalette())},
+    onImportSocketsUpdate:(data)=>{dispatch(importSocketsUpdate(data))},
+    onExportSocketsUpdate:(data)=>{dispatch(exportSocketsUpdate(data))}
   }
 }
 

@@ -10,6 +10,7 @@ export default class Dot extends Component {
     this.setState(
       {currentColor:{backgroundColor:`${this.props.activeColor}`}}
     )
+    this.props.sendSocketsState()
   }
   render() {
     return (

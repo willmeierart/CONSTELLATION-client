@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Header from '../components/Header'
 import Matrix from '../components/Matrix'
-import {setActiveColor, fetchPalette, importSocketsUpdate, exportSocketsUpdate} from '../actions'
+import {setActiveColor, fetchPalette, exportSocketsUpdate} from '../actions'
 
 class App extends Component {
   constructor(props){
@@ -11,15 +11,11 @@ class App extends Component {
   }
   componentWillMount(){this.props.onFetchPalette()}
 
-  updateState(i, update){
+  updateState(i, updatedColor){
     const data = this.props.data.socketsData.matrixState
-    console.log(data);
     const updatedArr = data.slice()
-    updatedArr[i] = {backgroundColor: update.replace(/\s+/g,'')}
-    // const updatedArr = Object.assign([], data, {i:update})
-    console.log(updatedArr);
+    updatedArr[i] = {backgroundColor: updatedColor.replace(/\s+/g,'')}
     this.props.onExportSocketsUpdate(updatedArr)
-    console.log('hello',update);
   }
 
   render() {
@@ -35,7 +31,6 @@ class App extends Component {
             dummyArray={this.props.data.socketsData.dummyArray}
             realArray={this.props.data.socketsData.matrixState}
             activeColor={colorData.activeColor}
-            importSocketsUpdate={this.props.onImportSocketsUpdate}
             exportSocketsUpdate={this.props.onExportSocketsUpdate}
             updateState={this.updateState}/>
         </div>
@@ -50,7 +45,6 @@ const mapDispatchToProps=(dispatch)=>{
   return{
     onSetActiveColor:(color)=>{dispatch(setActiveColor(color))},
     onFetchPalette:()=>{dispatch(fetchPalette())},
-    onImportSocketsUpdate:(data)=>{dispatch(importSocketsUpdate(data))},
     onExportSocketsUpdate:(data)=>{dispatch(exportSocketsUpdate(data))}
   }
 }

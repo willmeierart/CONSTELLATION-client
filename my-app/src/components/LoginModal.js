@@ -17,9 +17,9 @@ export default class LoginModal extends Component {
               <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
               <button type="button" className="btn btn-primary">Save changes</button>
             </div>
-          </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
+          </div>
+        </div>
+      </div>
     )
   }
 }

@@ -10,14 +10,14 @@ export default function socketsReducer(state=initialState, action){
   switch(action.type){
     case IMPORT_SOCKETS_UPDATE:{
       const newState = {...state}
-      newState.matrixState = {...newState.matrixState}
-      newState.matrixState = action.payload
+      console.log(action);
+      newState.matrixState = action.data || dummyColorArray()
       return newState
     }
     case EXPORT_SOCKETS_UPDATE:{
       const newState = {...state}
-      newState.dummyArray = {...newState.dummyArray}
-      newState.dummyArray = action.payload || dummyColorArray()
+      console.log(action);
+      newState.matrixState = action.data
       return newState
     }
     default:

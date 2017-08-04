@@ -21,7 +21,7 @@ export default class Matrix extends Component {
 
   componentWillMount(){
     input = this.props.dummyArray
-    this.props.importSocketsUpdate(this.props.dummyArray)
+    this.props.exportSocketsUpdate(this.props.dummyArray)
   }
 
   sendSocketsState(i, update){

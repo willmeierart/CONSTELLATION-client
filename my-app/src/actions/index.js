@@ -1,21 +1,21 @@
 import Store from '../redux-config/Store'
-export const IMPORT_SOCKETS_UPDATE = 'import_master_update'
-export const EXPORT_SOCKETS_UPDATE = 'export_master_update'
+export const IMPORT_SOCKETS_UPDATE = 'server/import_master_update'
+export const EXPORT_SOCKETS_UPDATE = 'server/export_master_update'
 export const UPDATE_PIXEL_VALUE = 'update_pixel_value'
 export const SET_ACTIVE_COLOR = 'set_active_color'
 export const FETCH_PALETTE = 'fetch_palette'
 
-export function importSocketsUpdate(data){
-  return {
-    type:IMPORT_SOCKETS_UPDATE,
-    payload: Store.dispatch({type:'server/import_master_update', data: data})
-  }
-}
-
 export function exportSocketsUpdate(data){
   return {
     type:EXPORT_SOCKETS_UPDATE,
-    payload: data.data
+    payload: Store.dispatch({type:EXPORT_SOCKETS_UPDATE, data: data})
+  }
+}
+
+export function importSocketsUpdate(data){
+  return {
+    type:IMPORT_SOCKETS_UPDATE,
+    payload: data
   }
 }
 

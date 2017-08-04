@@ -12,11 +12,13 @@ class App extends Component {
   componentWillMount(){this.props.onFetchPalette()}
 
   updateState(i, update){
-    const {data} = this.props.data.socketsData.matrixState
+    const data = this.props.data.socketsData.matrixState
+    console.log(data);
     const updatedArr = data.slice()
     updatedArr[i] = {backgroundColor: update.replace(/\s+/g,'')}
     // const updatedArr = Object.assign([], data, {i:update})
-    this.props.onImportSocketsUpdate(updatedArr)
+    console.log(updatedArr);
+    this.props.onExportSocketsUpdate(updatedArr)
     console.log('hello',update);
   }
 
@@ -31,7 +33,7 @@ class App extends Component {
             activeColor={colorData.activeColor}/>
           <Matrix
             dummyArray={this.props.data.socketsData.dummyArray}
-            realArray={this.props.data.socketsData.matrixState.data}
+            realArray={this.props.data.socketsData.matrixState}
             activeColor={colorData.activeColor}
             importSocketsUpdate={this.props.onImportSocketsUpdate}
             exportSocketsUpdate={this.props.onExportSocketsUpdate}

@@ -1,14 +1,25 @@
 import {IMPORT_SOCKETS_UPDATE, EXPORT_SOCKETS_UPDATE} from '../actions'
 import dummyColorArray from './dummy_array_generator'
 
-export default function socketsReducer(state=dummyColorArray(), action){
+const initialState = {
+  dummyArray: dummyColorArray(),
+  matrixState: []
+}
+
+export default function socketsReducer(state=initialState, action){
   switch(action.type){
     case IMPORT_SOCKETS_UPDATE:{
-      let newState = [...action.payload]
-      return newState || dummyColorArray()}
+      const newState = {...state}
+      newState.matrixState = {...newState.matrixState}
+      newState.matrixState = action.payload
+      return newState
+    }
     case EXPORT_SOCKETS_UPDATE:{
-      let newState = [...action.payload]
-      return newState || dummyColorArray()}
+      const newState = {...state}
+      newState.dummyArray = {...newState.dummyArray}
+      newState.dummyArray = action.payload || dummyColorArray()
+      return newState
+    }
     default:
       return state
   }

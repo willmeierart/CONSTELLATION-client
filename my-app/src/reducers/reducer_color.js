@@ -3,6 +3,7 @@ const initialState = {
   palette:{},
   activeColor:{}
 }
+
 export default function colorReducer(state=initialState, action){
   switch(action.type){
     case UPDATE_PIXEL_VALUE:

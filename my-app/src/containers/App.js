@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import io from 'socket.io-client'
 import Header from '../components/Header'
 import Matrix from '../components/Matrix'
 import {setActiveColor, fetchPalette, exportSocketsUpdate} from '../actions'
@@ -19,6 +20,13 @@ class App extends Component {
   }
 
   render() {
+    const socket = io('https://constellation.herokuapp.com/' || 'http://localhost:3000')
+    socket.on('user'), data=>{
+      let numUsers = 0
+      numUsers=data.concurrentUsers
+      console.log(numUsers);
+    }
+    console.log();
     const {colorData} = this.props.data
     return (
       <div className="App grey">

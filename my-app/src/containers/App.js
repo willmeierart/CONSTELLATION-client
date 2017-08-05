@@ -15,7 +15,7 @@ class App extends Component {
     const data = this.props.data.socketsData.matrixState
     const updatedArr = data.slice()
     updatedArr[i] = {backgroundColor: updatedColor.replace(/\s+/g,'')}
-    this.props.onExportSocketsUpdate(updatedArr)
+    this.props.onExportSocketsUpdate({index: i, data: updatedArr[i]})
   }
 
   render() {

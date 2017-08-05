@@ -21,12 +21,10 @@ class App extends Component {
 
   render() {
     const socket = io('https://constellation.herokuapp.com/' || 'http://localhost:3000')
-    socket.on('user'), data=>{
-      let numUsers = 0
-      numUsers=data.concurrentUsers
-      console.log(numUsers);
-    }
-    console.log();
+    socket.on('users', (data)=>{
+
+      console.log(data.concurrentUsers)
+    })
     const {colorData} = this.props.data
     return (
       <div className="App grey">

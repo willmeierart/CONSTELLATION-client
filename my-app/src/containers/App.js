@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import io from 'socket.io-client'
+import { socket } from '../Store'
 import Header from '../components/Header'
 import Matrix from '../components/Matrix'
 import {setActiveColor, fetchPalette, exportSocketsUpdate} from '../actions'
 
+
+
+
 class App extends Component {
   constructor(props){
     super(props)
+    this.state = {
+      users: 0
+    }
     this.updateState = this.updateState.bind(this)
   }
   componentWillMount(){this.props.onFetchPalette()}
@@ -20,10 +26,8 @@ class App extends Component {
   }
 
   render() {
-    const socket = io('https://constellation.herokuapp.com/' || 'http://localhost:3000')
     socket.on('users', (data)=>{
-
-      console.log(data.concurrentUsers)
+      this.setState({users: data.concurrentUsers})
     })
     const {colorData} = this.props.data
     return (
@@ -39,6 +43,7 @@ class App extends Component {
             activeColor={colorData.activeColor}
             exportSocketsUpdate={this.props.onExportSocketsUpdate}
             updateState={this.updateState}/>
+          <div className="container users">Users: {this.state.users}</div>
         </div>
       </div>
     )

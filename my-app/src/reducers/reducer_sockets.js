@@ -15,7 +15,7 @@ export default function socketsReducer(state=initialState, action){
     }
     case EXPORT_SOCKETS_UPDATE:{
       const newState = {...state}
-      newState.matrixState = action.payload
+      newState.matrixState = action.data
       return newState
     }
     default:

@@ -1,7 +1,7 @@
 import { compose, createStore, applyMiddleware } from 'redux'
 import promise from 'redux-promise'
 import logger from 'redux-logger'
-import reducers from '../reducers'
+import reducers from './reducers'
 import createSocketIoMiddleware from 'redux-socket.io';
 import io from 'socket.io-client';
 
@@ -21,4 +21,4 @@ if (window.location.hostname === 'localhost'){
 }
 
 
-export default Store
+export {Store, socket}
